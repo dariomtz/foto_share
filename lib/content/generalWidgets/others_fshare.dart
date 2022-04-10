@@ -41,7 +41,8 @@ class OthersShare extends StatelessWidget {
                     final path = '${temp.path}/image.jpg';
                     File(path).writeAsBytesSync(bytes);
 
-                    await Share.shareFiles([path], text: fshare.title);
+                    await Share.shareFiles([path],
+                        text: fshare.title + fshare.uploadedAt.toString());
                   },
                   icon: Icon(Icons.share)),
             )
