@@ -31,15 +31,6 @@ class _LoginPageState extends State<LoginPage> {
               "assets/icon/icon.png",
               height: 120,
             ),
-            SizedBox(height: 200),
-            MaterialButton(
-              child: Text("Iniciar como anonimo"),
-              color: Colors.grey,
-              onPressed: () {},
-            ),
-            Text(
-              "Utiliza un red social",
-            ),
             MaterialButton(
               child: Text("Iniciar con Google"),
               color: Colors.green,

@@ -10,7 +10,7 @@ class FShare {
   final String title;
   final String user;
 
-  const FShare({
+  FShare({
     required this.picture,
     required this.public,
     required this.uploadedAt,

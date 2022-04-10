@@ -7,8 +7,10 @@ abstract class AgregarEvent extends Equatable {
   List<Object> get props => [];
 }
 
+class AgregarSelectImage extends AgregarEvent {}
+
 class AgregarSubmit extends AgregarEvent {
-  final String picture;
+  final XFile picture;
   final String title;
   final bool public;
 

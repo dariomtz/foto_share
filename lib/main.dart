@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:foto_share/auth/bloc/auth_bloc.dart';
 import 'package:foto_share/content/agregar/bloc/agregar_bloc.dart';
 import 'package:foto_share/content/espera/bloc/pending_bloc.dart';
+import 'package:foto_share/content/feed/bloc/feed_bloc.dart';
+import 'package:foto_share/content/mi_contenido/bloc/micontenido_bloc.dart';
 import 'package:foto_share/home/home_page.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -21,6 +23,11 @@ void main() async {
           create: (context) => PendingBloc()..add(GetAllMyDisabledFotosEvent()),
         ),
         BlocProvider(
+          create: (context) =>
+              MicontenidoBloc()..add(GetAllMyPublicFotosEvent()),
+        ),
+        BlocProvider(create: ((context) => FeedBloc()..add(GetMyFeedEvent()))),
+        BlocProvider(
           create: (context) => AgregarBloc(),
         )
       ],
@@ -37,6 +44,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(
           seedColor: Colors.purple,
         ),
+        primaryColor: Colors.purple,
       ),
       home: BlocConsumer<AuthBloc, AuthState>(
         listener: (context, state) {
